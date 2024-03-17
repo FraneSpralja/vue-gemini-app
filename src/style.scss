@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fcfcfc;
+}
+
+.container {
+    width: min(95vw, 1320px);
+    margin-inline: auto;
+    padding: 24px;
+}
+
+.section-search {
+    
+    &__answers {
+        align-items: end;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 1px 2px 5px rgb(0 0 0 / .1);
+        display: grid;
+        max-height: 50vh;
+        margin-block-end: 40px;
+        min-height: 50vh;
+        overflow-y: auto;
+        padding: 16px;
+        row-gap: 12px;
+
+        .chat-text {
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            padding: 16px;
+            width: fit-content;
+
+            span {
+                font-weight: 700;
+            }
+
+            &-user {
+                margin-inline-start: auto;
+            }
+        }
+
+        .error-msg {
+            background-color: rgb(251 133 133);
+            border-radius: 6px;
+            padding: 16px;
+            width: fit-content;
+        }
+
+        #anchor {
+            height: 1px;
+        }
+    }
+
+    &__title {
+        margin-block-end: 24px;
+    }
+
+    &__input {
+        display: grid;
+        column-gap: 30px;
+        grid-template-columns: 40vw max-content;
+
+        .search-input {
+            border: 1px solid #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 1px 2px 5px rgb(0 0 0 / .1);
+            padding-inline: 12px;
+            padding-block: 8px;
+
+            &::placeholder {
+                color: #dbdbdb;
+            }
+        }
+    }
+
+    &__actions {
+        column-gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.button {
+    background-color: #e4e4e4;
+    color: #353535;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    padding-block: 3px;
+    padding-inline: 16px;
+    transition: all .4s ease-in-out;
+    
+    &:hover {
+        background-color: rgb(91 91 236);
+        color: #ffffff;
+    }
+    
+    &.clean-btn {
+        &:hover {
+            background-color: rgb(251 133 133);
+        }
+
+        &.error-btn {
+            background-color: rgb(251 133 133);
+            
+            &:hover {
+                background-color: rgb(252 120 120);
+            }
+        }
+    }
+    
+    &:disabled {
+        background-color: #e4e4e4;
+        color: #d2d2d2;
+        cursor: not-allowed;
+    }
+}
